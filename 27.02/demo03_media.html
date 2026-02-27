@@ -1,0 +1,15 @@
+<script>
+    let msg = "Insira a primeira nota:"
+    let nota1 = Number(prompt(msg))
+    let msg2 = "Insira a segunda nota:"
+    let nota2 = Number(prompt(msg2))
+    let msg3 = "Insira a terceira nota:"
+    let nota3 = Number(prompt(msg3))
+    function calculomedia(n1, n2, n3){
+        let soma = n1 + n2 + n3
+        let media = soma / 3
+        return media
+    }
+    let mediafinal = calculomedia(nota1, nota2, nota3)
+    alert("Média: " + mediafinal)
+</script>

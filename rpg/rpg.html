@@ -1,0 +1,158 @@
+<script>
+    /*let hpBoss = 300;
+    let manaheroi = 100;
+    let managastatotal = 0;
+    let acao = 0;
+
+    let menu = "Escolha sua ação: \n"
+                + " 1 - Ataque Básico \n"
+                + " 2 - Skill \n"
+                + " 3 - Ultimate \n"
+                + " 4 - Fugir \n"
+    
+  
+    alert('O chefe surgiu: 300hp')
+    for (let turno = 1; turno <= 15; turno++) {
+        if (hpBoss <= 0) {
+            alert('O Boss Foi Derrotado!')
+            break;
+        }
+        let escolha = prompt(menu);
+        acao = parseInt(escolha);
+        alert("Ação:" + acao)
+        switch(acao) {
+            case 1:
+                    alert("Ataque Básico. 20 dano")
+                    hpBoss -= 20;
+                    break;
+            case 2:
+                if (manaheroi >= 30){
+                    alert("Ataque Básico. 50 dano")
+                    hpBoss -= 50;
+                    manaheroi -= 30;
+                    managastatotal += 30;
+                    break;
+                }
+                else {
+                    alert("Mana Insuficiente!")
+                }
+            case 3:
+                if (managastatotal >=50) {
+                    alert("Ultimate. 150 dano!")
+                    hpBoss -= 150;
+                    managastatotal = 0;
+                    break;
+                }
+                else {
+                    alert("Ultimate não carregada!")
+                }
+            case 4:
+                alert("Heroi retirou-se!")
+                return;
+            break;
+            }
+
+        alert("HP BOSS: " + hpBoss + "\nMana: " + manaheroi);
+    }
+    if (hpBoss <= 0){
+        alert("Heroi Venceu!")
+    }
+    else{
+        alert("Chefe Venceu!")
+    }*/
+        let hpheroi = 100;
+        let hpBoss = 300;
+        let manaheroi = 100;
+        let energiaUltimate = 0;
+
+    let menu = "Escolha sua ação:\n"
+                + "1 - Ataque Básico (20 dano)\n"
+                + "2 - Skill (50 dano - 30 mana)\n"
+                + "3 - Ultimate (150 dano - requer 50 energia)\n"
+                + "4 - Fugir\n";
+
+    alert('O chefe surgiu: 300 HP');
+
+    for (let turno = 1; turno <= 15; turno++) {
+
+        if (hpBoss <= 0) {
+            alert('O Boss foi derrotado!');
+            break;
+        }
+        let escolha = prompt(menu);
+        let acao = parseInt(escolha);
+        switch (acao) {
+            case 1:
+                alert("Ataque Básico! 20 dano");
+                hpBoss -= 20;
+                energiaUltimate += 10;
+                break;
+
+            case 2:
+                if (manaheroi >= 30) {
+                    alert("Skill usada! 50 dano");
+                    hpBoss -= 50;
+                    manaheroi -= 30;
+                    energiaUltimate += 20;
+                } else {
+                    alert("Mana insuficiente!");
+                }
+                break;
+
+            case 3:
+                if (energiaUltimate >= 50) {
+                    alert("ULTIMATE! 150 dano!");
+                    hpBoss -= 150;
+                    energiaUltimate = 0;
+                } else {
+                    alert("Ultimate não carregada!");
+                }
+                break;
+
+            case 4:
+                alert("Herói fugiu!");
+                break;
+            default:
+                alert("Opção inválida!");
+        }
+        if (acao != 4) {
+            alert("Boss Atingiu o Héroi!")
+            if (turno === 1) {
+                alert("Vida do Herói -10HP");
+                hpheroi -= 10;
+
+            } else if (turno % 2 === 0) {  // turno par
+                alert("Vida do Herói -20HP");
+                hpheroi -= 20;
+
+            } else {  // turno ímpar (exceto 1)
+                alert("Vida do Herói -30HP");
+                hpheroi -= 30;
+        }
+            alert(
+                "Hp Héroi: "+ hpheroi +
+                "\nTurno: " + turno +
+                "\nHP Boss: " + hpBoss +
+                "\nMana: " + manaheroi +
+                "\nEnergia Ultimate: " + energiaUltimate
+            );
+        }
+        else {
+               alert("Héroi fugiu!")
+               alert("Retirada tatica recuperou +20hp")
+              hpheroi = hpheroi + 20
+            }
+            alert(
+              "Hp Héroi: "+ hpheroi +
+              "\nTurno: " + turno +
+              "\nHP Boss: " + hpBoss +
+              "\nMana: " + manaheroi +
+              "\nEnergia Ultimate: " + energiaUltimate
+            );
+        }
+    if (hpBoss <= 0) {
+        alert("Herói venceu!");
+    } else {
+        alert("Chefe venceu!");
+    }
+</script>

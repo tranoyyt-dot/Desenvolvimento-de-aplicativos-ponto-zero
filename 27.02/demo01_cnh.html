@@ -1,0 +1,15 @@
+<script>
+msg = "Digite a sua idade: ";
+const idade = prompt(msg);
+function podeDirigir(idade) {
+    if (idade >= 18){
+        return "Autorizado";
+    } else if (idade < 18 && idade >= 0) {
+        let anosRestantes = 18 - idade;
+        return "Desautorizado\n \n+" + anosRestantes + " até dirigir.";
+    } else {
+        return "\nERR0#";
+    }
+}
+alert(podeDirigir(idade))
+</script>
