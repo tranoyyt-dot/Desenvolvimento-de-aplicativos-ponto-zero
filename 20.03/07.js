@@ -1,0 +1,8 @@
+class Pessoa {
+  constructor(nome) {
+    this.nome = nome;
+  }
+}
+
+const usuario = new Pessoa("Ana");
+console.log(typeof usuario);
